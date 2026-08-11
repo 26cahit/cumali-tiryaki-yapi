@@ -1,0 +1,2408 @@
+/* =====================================================
+   TEMEL
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #10233f;
+  background: #ffffff;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.site-header {
+  width: 100%;
+  height: 108px;
+  background: #ffffff;
+
+  position: relative;
+  z-index: 1000;
+
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.header-container {
+  width: 94%;
+  max-width: 1550px;
+  height: 100%;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+/* LOGO + YAZI */
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  width: 125px;
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-right: 18px;
+}
+.brand-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 340px;
+  height: 90px;
+
+  flex-shrink: 0;
+}
+
+.brand-name img {
+  width: 320px;
+  height: 82px;
+
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 600px) {
+  .brand-name {
+    width: 230px;
+    height: 65px;
+  }
+
+  .brand-name img {
+    width: 220px;
+    height: 60px;
+    object-fit: contain;
+  }
+}
+.brand-logo img {
+  width: 105px;
+  height: 75px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+/* =====================================================
+   NAV
+===================================================== */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 38px;
+
+  flex: 1;
+}
+
+.main-nav a {
+  position: relative;
+
+  padding: 40px 0 34px;
+
+  color: #10233f;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition: 0.25s ease;
+}
+
+.main-nav a:hover {
+  color: #ff6b16;
+}
+
+.main-nav a.active {
+  color: #10233f;
+}
+
+.main-nav a.active::after {
+  display: none;
+}
+/* =====================================================
+   HEADER SAĞ
+===================================================== */
+
+.header-right {
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+
+  flex-shrink: 0;
+}
+
+.phone-area {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.phone-icon {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #10233f;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+}
+
+.phone-text small {
+  display: block;
+
+  color: #7b8491;
+
+  font-size: 12px;
+}
+
+.phone-text strong {
+  display: block;
+
+  color: #10233f;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.quote-btn {
+  min-width: 160px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  background: #ff6b16;
+  color: #ffffff;
+
+  border-radius: 6px;
+
+  text-decoration: none;
+
+  font-weight: 800;
+
+  transition: 0.25s ease;
+}
+
+.quote-btn:hover {
+  background: #e85b0b;
+  transform: translateY(-2px);
+}
+
+.quote-btn span {
+  font-size: 20px;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+  position: relative;
+
+  min-height: 470px;
+
+  background-image: url("images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(3, 28, 55, 0.98) 0%,
+    rgba(3, 28, 55, 0.92) 27%,
+    rgba(3, 28, 55, 0.62) 50%,
+    rgba(3, 28, 55, 0.05) 80%
+  );
+}
+
+.hero-container {
+  position: relative;
+
+  width: 94%;
+  max-width: 1550px;
+
+  margin: auto;
+
+  min-height: 470px;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 760px;
+
+  padding: 55px 0;
+}
+
+.hero-top-title {
+  font-size: 14px;
+  font-weight: 800;
+
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 4vw, 68px);
+
+  line-height: 1.02;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+}
+
+.hero h1 span {
+  display: block;
+
+  color: #ff6b16;
+}
+
+.hero p {
+  max-width: 650px;
+
+  margin-top: 20px;
+
+  font-size: 16px;
+
+  color: #f2f5f8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+
+  margin-top: 28px;
+}
+
+.btn-primary,
+.btn-outline {
+  min-height: 55px;
+
+  padding: 0 27px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  border-radius: 5px;
+
+  text-decoration: none;
+
+  font-weight: 800;
+}
+
+.btn-primary {
+  background: #ff6b16;
+  color: #ffffff;
+}
+
+.btn-outline {
+  border: 1px solid white;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #e95c0c;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #10233f;
+}
+
+.hero-features {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 35px;
+
+  margin-top: 40px;
+}
+
+.hero-features div {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  font-size: 14px;
+}
+
+.feature-icon {
+  color: #ff6b16;
+
+  font-size: 21px;
+}
+
+/* =====================================================
+   SECTION BAŞLIKLARI
+===================================================== */
+
+.section-heading {
+  text-align: center;
+
+  margin-bottom: 42px;
+}
+
+.section-heading > span {
+  color: #ff6b16;
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+.section-heading h2 {
+  margin-top: 5px;
+
+  font-size: 38px;
+
+  line-height: 1.1;
+}
+
+.heading-line {
+  width: 45px;
+  height: 3px;
+
+  margin: 14px auto 0;
+
+  background: #ff6b16;
+}
+
+/* =====================================================
+   HİZMETLER
+===================================================== */
+
+.services-section {
+  padding: 75px 3.5% 85px;
+
+  background: #ffffff;
+}
+
+.services-grid {
+  max-width: 1500px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  gap: 12px;
+}
+
+.service-card {
+  min-height: 315px;
+
+  padding: 22px 20px;
+
+  border: 1px solid #dfe4ea;
+
+  border-radius: 7px;
+
+  background: white;
+
+  box-shadow: 0 5px 20px rgba(15, 35, 60, 0.04);
+
+  transition: 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 12px 30px rgba(15, 35, 60, 0.1);
+}
+
+.service-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+}
+
+.service-top > span {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.service-icon {
+  font-size: 42px;
+
+  line-height: 1;
+}
+
+.orange {
+  color: #ff6b16;
+}
+
+.blue {
+  color: #477cff;
+}
+
+.navy {
+  color: #10233f;
+}
+
+.purple {
+  color: #8e78bd;
+}
+
+.service-card h3 {
+  margin-top: 22px;
+
+  font-size: 16px;
+
+  line-height: 1.15;
+}
+
+.service-card ul {
+  margin-top: 18px;
+
+  padding-left: 15px;
+
+  color: #667486;
+
+  font-size: 12px;
+}
+
+.service-card li {
+  margin-bottom: 7px;
+}
+
+.service-card li::marker {
+  color: #ff6b16;
+}
+
+.service-card > a {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  color: #ff6b16;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+/* =====================================================
+   PROJELER
+===================================================== */
+
+.projects-section {
+  padding: 70px 3.5%;
+
+  background: #f5f8fb;
+}
+
+.projects-container {
+  max-width: 1500px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 240px 1fr;
+
+  gap: 35px;
+}
+
+.projects-title > span {
+  color: #ff6b16;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.projects-title h2 {
+  margin-top: 7px;
+
+  font-size: 29px;
+
+  line-height: 1.1;
+}
+
+.small-btn {
+  display: inline-flex;
+
+  margin-top: 25px;
+
+  padding: 12px 17px;
+
+  border: 1px solid #10233f;
+
+  border-radius: 4px;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 12px;
+}
+
+.project-card {
+  background: white;
+
+  border-radius: 7px;
+
+  overflow: hidden;
+
+  border: 1px solid #e0e5ea;
+}
+
+.project-image {
+  height: 150px;
+
+  background-size: cover;
+  background-position: center;
+}
+
+.project-one {
+  background-image: url("images/hero.jpg");
+}
+
+.project-two {
+  background-image: url("images/hero.jpg");
+}
+
+.project-three {
+  background-image: url("images/hero.jpg");
+}
+
+.project-four {
+  background-image: url("images/hero.jpg");
+}
+
+.project-five {
+  background-image: url("images/hero.jpg");
+}
+
+.project-info {
+  padding: 12px;
+}
+
+.project-info h3 {
+  font-size: 13px;
+
+  margin-bottom: 8px;
+}
+
+.project-info div {
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #6b7684;
+
+  font-size: 11px;
+}
+
+/* =====================================================
+   HAKKIMIZDA
+===================================================== */
+
+.about-section {
+  padding: 80px 3.5%;
+
+  background: #ffffff;
+}
+
+.about-container {
+  max-width: 1500px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.about-content > span {
+  color: #ff6b16;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.about-content h2 {
+  margin-top: 8px;
+
+  font-size: 38px;
+
+  line-height: 1.15;
+}
+
+.about-content p {
+  max-width: 680px;
+
+  margin-top: 20px;
+
+  color: #637083;
+
+  line-height: 1.8;
+}
+
+.btn-dark {
+  display: inline-flex;
+
+  margin-top: 25px;
+
+  padding: 14px 24px;
+
+  background: #10233f;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: 800;
+
+  border-radius: 4px;
+}
+
+.statistics {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  background: #10233f;
+
+  color: white;
+}
+
+.statistics div {
+  min-height: 170px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.statistics strong {
+  color: #ff6b16;
+
+  font-size: 43px;
+}
+
+.statistics span {
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+/* =====================================================
+   İLETİŞİM
+===================================================== */
+
+.contact-section {
+  padding: 75px 3.5%;
+
+  background: #09294d;
+
+  color: white;
+}
+
+.contact-container {
+  max-width: 1500px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 60px;
+
+  align-items: center;
+}
+
+.contact-info > span {
+  color: #ff6b16;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+.contact-info h2 {
+  margin-top: 7px;
+
+  font-size: 36px;
+}
+
+.contact-info h3 {
+  margin-top: 60px;
+
+  font-size: 21px;
+}
+
+.contact-info p {
+  margin-top: 25px;
+
+  color: #e9eef5;
+
+  font-size: 15px;
+}
+
+.contact-form {
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 8px;
+}
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+
+  margin-bottom: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+
+  border: 1px solid #dce2e8;
+
+  padding: 15px;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ff6b16;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+
+  resize: vertical;
+
+  margin-bottom: 14px;
+}
+
+.contact-form button {
+  width: 100%;
+
+  height: 50px;
+
+  border: none;
+
+  background: #ff6b16;
+
+  color: white;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+  background: white;
+
+  color: #10233f;
+}
+
+.footer-container {
+  max-width: 1500px;
+
+  margin: auto;
+
+  padding: 60px 3.5%;
+
+  display: grid;
+
+  grid-template-columns: 1.5fr 1fr 1.4fr 1fr;
+
+  gap: 50px;
+}
+
+.footer-brand-name {
+  font-size: 27px;
+
+  font-weight: 900;
+}
+
+.footer-brand > strong {
+  display: block;
+
+  color: #ff6b16;
+
+  font-size: 16px;
+
+  margin-top: 3px;
+}
+
+.footer-brand p {
+  max-width: 350px;
+
+  margin-top: 20px;
+
+  color: #68778a;
+
+  line-height: 1.7;
+
+  font-size: 14px;
+}
+
+.footer-column {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+}
+
+.footer-column h3 {
+  margin-bottom: 10px;
+
+  font-size: 14px;
+}
+
+.footer-column a {
+  color: #68778a;
+
+  text-decoration: none;
+
+  font-size: 13px;
+}
+
+.footer-column a:hover {
+  color: #ff6b16;
+}
+
+.social-links {
+  display: flex;
+
+  gap: 10px;
+}
+
+.social-links a {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dce2e8;
+
+  border-radius: 50%;
+
+  font-weight: 800;
+}
+
+.footer-bottom {
+  border-top: 1px solid #e4e8ed;
+
+  padding: 18px 3.5%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #718096;
+
+  font-size: 12px;
+}
+
+.footer-bottom div {
+  display: flex;
+
+  gap: 25px;
+}
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.whatsapp {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #20d466;
+
+  color: white;
+
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  font-size: 28px;
+
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
+
+  z-index: 2000;
+}
+
+/* =====================================================
+   MOBİL MENÜ
+===================================================== */
+
+.mobile-menu {
+  display: none;
+
+  border: none;
+
+  background: #10233f;
+
+  color: white;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 5px;
+
+  font-size: 24px;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1250px) {
+  .brand {
+    gap: 12px;
+  }
+
+  .brand-logo {
+    width: 95px;
+    padding-right: 12px;
+  }
+
+  .brand-logo img {
+    width: 82px;
+  }
+
+  .main-nav {
+    gap: 20px;
+  }
+
+  .main-nav a {
+    font-size: 14px;
+  }
+
+  .phone-area {
+    display: none;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =====================================================
+   TABLET / KÜÇÜK EKRAN
+===================================================== */
+
+@media (max-width: 900px) {
+  .site-header {
+    height: auto;
+  }
+
+  .header-container {
+    min-height: 85px;
+
+    flex-wrap: wrap;
+
+    padding: 8px 0;
+  }
+
+  .main-nav {
+    order: 4;
+
+    flex-basis: 100%;
+
+    overflow-x: auto;
+
+    justify-content: flex-start;
+
+    padding-bottom: 8px;
+  }
+
+  .main-nav a {
+    padding: 8px 0;
+  }
+
+  .main-nav a.active::after {
+    bottom: 0;
+  }
+
+  .hero,
+  .hero-container {
+    min-height: 560px;
+  }
+
+  .hero-content {
+    max-width: 650px;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =====================================================
+   TELEFON
+===================================================== */
+
+@media (max-width: 600px) {
+  .site-header {
+    height: auto;
+  }
+
+  .header-container {
+    width: 92%;
+
+    justify-content: space-between;
+  }
+
+  .brand {
+    gap: 9px;
+  }
+
+  .brand-logo {
+    width: 72px;
+    height: 62px;
+
+    padding-right: 8px;
+  }
+
+  .brand-logo img {
+    width: 65px;
+    height: 58px;
+  }
+
+  .brand-cumali {
+    font-size: 16px;
+  }
+
+  .brand-tiryaki {
+    font-size: 28px;
+  }
+
+  .brand-subtitle {
+    font-size: 9px;
+
+    gap: 5px;
+
+    margin-top: 5px;
+  }
+
+  .brand-subtitle span {
+    width: 15px;
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .main-nav {
+    width: 100%;
+
+    gap: 25px;
+
+    order: 5;
+  }
+
+  .main-nav a {
+    font-size: 13px;
+  }
+
+  .hero {
+    min-height: 610px;
+  }
+
+  .hero-container {
+    min-height: 610px;
+  }
+
+  .hero-content {
+    padding: 45px 0;
+  }
+
+  .hero-top-title {
+    font-size: 11px;
+  }
+
+  .hero h1 {
+    font-size: 37px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 190px;
+  }
+
+  .hero-features {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+  }
+
+  .hero-features div {
+    font-size: 11px;
+  }
+
+  .services-section {
+    padding: 55px 5%;
+  }
+
+  .section-heading h2 {
+    font-size: 30px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: auto;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content h2 {
+    font-size: 30px;
+  }
+
+  .statistics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .statistics div {
+    min-height: 130px;
+  }
+
+  .statistics strong {
+    font-size: 32px;
+  }
+
+  .contact-info h2 {
+    font-size: 30px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .whatsapp {
+    width: 54px;
+    height: 54px;
+
+    right: 18px;
+    bottom: 18px;
+  }
+}
+/* =====================================================
+   RESPONSIVE TASARIM
+   Bilgisayar + Tablet + Telefon
+   ===================================================== */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1100px) {
+  .header-inner {
+    padding: 0 20px;
+  }
+
+  .brand-logo {
+    width: 95px;
+  }
+
+  .brand-name {
+    width: 280px;
+  }
+
+  .brand-name img {
+    width: 265px;
+    height: auto;
+  }
+
+  .main-nav {
+    gap: 18px;
+  }
+
+  .main-nav a {
+    font-size: 14px;
+  }
+
+  .header-contact {
+    display: none;
+  }
+
+  .quote-btn {
+    padding: 14px 20px;
+    white-space: nowrap;
+  }
+
+  .hero-content {
+    width: 55%;
+    padding-left: 35px;
+  }
+
+  .hero-title {
+    font-size: clamp(38px, 5vw, 64px);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================
+   TABLET / KÜÇÜK EKRAN
+   ========================= */
+
+@media (max-width: 850px) {
+  .header-inner {
+    min-height: 85px;
+    padding: 0 15px;
+  }
+
+  .brand-logo {
+    width: 75px;
+  }
+
+  .brand-name {
+    width: 230px;
+  }
+
+  .brand-name img {
+    width: 220px;
+    height: auto;
+  }
+
+  .main-nav {
+    gap: 12px;
+  }
+
+  .main-nav a {
+    font-size: 12px;
+  }
+
+  .quote-btn {
+    padding: 12px 15px;
+    font-size: 12px;
+  }
+
+  .hero-content {
+    width: 65%;
+    padding: 50px 25px;
+  }
+
+  .hero-title {
+    font-size: 42px;
+    line-height: 1.05;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   TELEFON
+   ========================= */
+
+@media (max-width: 700px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .header-inner {
+    min-height: 75px;
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .brand-logo {
+    width: 65px;
+    flex-shrink: 0;
+  }
+
+  .brand-name {
+    width: auto;
+    flex: 1;
+    justify-content: flex-start;
+    margin-left: 10px;
+  }
+
+  .brand-name img {
+    width: min(230px, 100%);
+    height: auto;
+  }
+
+  /* Masaüstü menüsü telefonda gizlenir */
+  .main-nav {
+    display: none;
+  }
+
+  .header-contact {
+    display: none;
+  }
+
+  .quote-btn {
+    display: none;
+  }
+
+  /* Mobil menü butonu */
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+  }
+
+  /* HERO */
+
+  .hero {
+    min-height: 620px;
+    background-position: center;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding: 70px 25px 40px;
+  }
+
+  .hero-title {
+    font-size: clamp(34px, 10vw, 48px);
+    line-height: 1.05;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+  }
+
+  .hero-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  /* HİZMETLER */
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .service-card {
+    width: 100%;
+  }
+
+  /* GENEL */
+
+  .container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* =========================
+   KÜÇÜK TELEFON
+   ========================= */
+
+@media (max-width: 480px) {
+  .header-inner {
+    min-height: 70px;
+    padding: 8px 10px;
+  }
+
+  .brand-logo {
+    width: 58px;
+  }
+
+  .brand-name {
+    margin-left: 6px;
+  }
+
+  .brand-name img {
+    width: 190px;
+  }
+
+  .mobile-menu-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero {
+    min-height: 650px;
+  }
+
+  .hero-content {
+    padding: 55px 20px 35px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .service-card {
+    padding: 22px;
+  }
+}
+
+/* =========================
+   ÇOK KÜÇÜK EKRAN
+   ========================= */
+
+@media (max-width: 360px) {
+  .brand-logo {
+    width: 52px;
+  }
+
+  .brand-name img {
+    width: 165px;
+  }
+
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* Mobil menü butonu masaüstünde gizli */
+.mobile-menu-btn {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+}
+/* =====================================================
+   HEADER SON DÜZENLEME
+   Logo + resim + menü hizalama
+===================================================== */
+
+.site-header {
+  height: 108px;
+}
+
+.header-container {
+  width: 94%;
+  max-width: 1550px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+/* SOL MARKA ALANI */
+.brand {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  flex: 0 0 auto;
+  width: 395px;
+}
+
+/* SOLDaki küçük logo */
+.brand-logo {
+  width: 105px;
+  height: 82px;
+
+  padding-right: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-right: 1px solid #e5e5e5;
+}
+
+.brand-logo img {
+  width: 88px;
+  height: 70px;
+
+  object-fit: contain;
+  display: block;
+}
+
+/* LOGONUN YANINDAKİ resim.png */
+.brand-name {
+  width: 260px;
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  flex-shrink: 0;
+}
+
+.brand-name img {
+  width: 235px;
+  height: auto;
+
+  object-fit: contain;
+  display: block;
+}
+
+/* =====================================================
+   ANA MENÜ
+===================================================== */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 32px;
+
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.main-nav a {
+  padding: 40px 0 34px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   SAĞ TELEFON + TEKLİF
+===================================================== */
+
+.header-right {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  flex: 0 0 auto;
+}
+
+.phone-area {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.phone-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.phone-text strong {
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.quote-btn {
+  min-width: 150px;
+  height: 56px;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   1400px ALTI
+===================================================== */
+
+@media (max-width: 1400px) {
+  .brand {
+    width: 350px;
+  }
+
+  .brand-logo {
+    width: 95px;
+  }
+
+  .brand-logo img {
+    width: 80px;
+  }
+
+  .brand-name {
+    width: 235px;
+  }
+
+  .brand-name img {
+    width: 215px;
+  }
+
+  .main-nav {
+    gap: 22px;
+  }
+
+  .main-nav a {
+    font-size: 14px;
+  }
+
+  .header-right {
+    gap: 12px;
+  }
+
+  .quote-btn {
+    min-width: 135px;
+    padding: 0 15px;
+  }
+}
+
+/* =====================================================
+   1100px ALTI
+===================================================== */
+
+@media (max-width: 1100px) {
+  .header-container {
+    width: 96%;
+    gap: 12px;
+  }
+
+  .brand {
+    width: 310px;
+  }
+
+  .brand-logo {
+    width: 82px;
+    padding-right: 8px;
+  }
+
+  .brand-logo img {
+    width: 70px;
+  }
+
+  .brand-name {
+    width: 215px;
+  }
+
+  .brand-name img {
+    width: 200px;
+  }
+
+  .main-nav {
+    gap: 15px;
+  }
+
+  .main-nav a {
+    font-size: 13px;
+  }
+
+  .phone-area {
+    display: none;
+  }
+
+  .quote-btn {
+    min-width: 125px;
+  }
+}
+
+/* =====================================================
+   850px ALTI
+===================================================== */
+
+@media (max-width: 850px) {
+  .site-header {
+    height: auto;
+  }
+
+  .header-container {
+    width: 94%;
+    min-height: 82px;
+
+    flex-wrap: wrap;
+    padding: 8px 0;
+  }
+
+  .brand {
+    width: auto;
+  }
+
+  .main-nav {
+    order: 4;
+    flex-basis: 100%;
+
+    justify-content: flex-start;
+
+    overflow-x: auto;
+
+    gap: 25px;
+
+    padding-bottom: 8px;
+  }
+
+  .main-nav a {
+    padding: 8px 0;
+
+    font-size: 13px;
+  }
+
+  .header-right {
+    margin-left: auto;
+  }
+}
+
+/* =====================================================
+   TELEFON
+===================================================== */
+
+@media (max-width: 600px) {
+  .header-container {
+    width: 94%;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-logo {
+    width: 68px;
+    height: 60px;
+
+    padding-right: 7px;
+  }
+
+  .brand-logo img {
+    width: 58px;
+    height: 52px;
+  }
+
+  .brand-name {
+    width: 190px;
+    height: 60px;
+  }
+
+  .brand-name img {
+    width: 180px;
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+  }
+}
+
+/* =====================================================
+   ÇOK KÜÇÜK TELEFON
+===================================================== */
+
+@media (max-width: 400px) {
+  .brand-logo {
+    width: 60px;
+  }
+
+  .brand-logo img {
+    width: 52px;
+  }
+
+  .brand-name {
+    width: 165px;
+  }
+
+  .brand-name img {
+    width: 155px;
+  }
+}
+/* Logo ile resim.png arasındaki çizgiyi kaldır */
+.brand-logo {
+  border-right: none !important;
+}
+/* =====================================================
+   HEADER - ŞUBELERİMİZ EKLENDİKTEN SONRA DÜZEN
+===================================================== */
+
+.site-header {
+  width: 100%;
+  overflow: hidden;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 28px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: minmax(430px, 1fr) auto auto;
+  align-items: center;
+  column-gap: 35px;
+}
+
+/* LOGO ALANI */
+.brand {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* MENÜ */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  white-space: nowrap;
+}
+
+.main-nav a {
+  white-space: nowrap;
+}
+
+/* TELEFON + TEKLİF */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  white-space: nowrap;
+}
+
+.phone-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.phone-text {
+  white-space: nowrap;
+}
+
+.quote-btn {
+  white-space: nowrap;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1500px) {
+  .header-container {
+    grid-template-columns: minmax(360px, 1fr) auto auto;
+    column-gap: 20px;
+    padding: 0 20px;
+  }
+
+  .main-nav {
+    gap: 20px;
+  }
+
+  .header-right {
+    gap: 15px;
+  }
+}
+
+/* =====================================================
+   KÜÇÜK EKRAN
+===================================================== */
+
+@media (max-width: 1200px) {
+  .header-container {
+    grid-template-columns: 1fr auto;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .header-right {
+    justify-self: end;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
+/* =====================================================
+   TELEFON
+===================================================== */
+
+@media (max-width: 700px) {
+  .header-container {
+    grid-template-columns: 1fr auto;
+    padding: 0 15px;
+  }
+
+  .brand {
+    max-width: 280px;
+  }
+  .header-right {
+    gap: 8px;
+  }
+
+  .phone-area {
+    display: none;
+  }
+
+  .quote-btn {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+}
+/* Menü: sadece fare üzerindeyken turuncu */
+.main-nav a.active {
+  color: #10233f;
+}
+
+.main-nav a.active:hover {
+  color: #ff6b16;
+}
+
+.main-nav a.active::after {
+  display: none;
+}
+
+.main-nav a.active::after {
+  display: none;
+}
+.phone-area {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.phone-area:hover .phone-text strong {
+  color: #ff6b16;
+}
+
+.phone-area:hover .phone-icon {
+  transform: scale(1.05);
+}
+
+.phone-icon {
+  transition: 0.2s ease;
+}
+/* =========================================
+   ÜST TELEFON - TIKLANABİLİR
+========================================= */
+
+.header-right .phone-area {
+  text-decoration: none !important;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header-right .phone-area:hover {
+  transform: translateY(-2px);
+}
+
+.header-right .phone-area:hover .phone-icon {
+  background: #ff6b16;
+  color: #ffffff;
+}
+
+.header-right .phone-area:hover .phone-text strong {
+  color: #ff6b16;
+}
+
+.header-right .phone-area:hover .phone-text small {
+  color: #ff6b16;
+}
+/* =========================================
+   SAĞ ÜST TELEFON - AKTİF ARAMA
+========================================= */
+
+.header-right a.phone-area {
+  display: flex !important;
+  align-items: center;
+  gap: 9px;
+
+  color: #10233f !important;
+  text-decoration: none !important;
+
+  cursor: pointer !important;
+  pointer-events: auto !important;
+
+  position: relative;
+  z-index: 9999;
+
+  transition: all 0.2s ease;
+}
+
+/* Fare üzerine geldiğinde */
+.header-right a.phone-area:hover {
+  color: #ff6b16 !important;
+  transform: translateY(-2px);
+}
+
+/* Telefon dairesi */
+.header-right a.phone-area:hover .phone-icon {
+  background: #ff6b16 !important;
+  color: #ffffff !important;
+}
+
+/* Bizi Arayın */
+.header-right a.phone-area:hover .phone-text small {
+  color: #ff6b16 !important;
+}
+
+/* Numara */
+.header-right a.phone-area:hover .phone-text strong {
+  color: #ff6b16 !important;
+}
+
+/* Tıklanırken */
+.header-right a.phone-area:active {
+  transform: scale(0.97);
+}
+
+/* =====================================================
+   SON DÜZENLEME - ÜST TELEFON ALANI
+   Telefon bağlantısı HTML/JavaScript tarafından yönetilir.
+   Bu bölüm yalnızca görünüm ve tıklanabilir alanı düzenler.
+===================================================== */
+
+.header-right a.phone-area {
+  display: flex !important;
+  align-items: center;
+  gap: 9px;
+  color: #10233f !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 99999;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.header-right a.phone-area .phone-icon {
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.header-right a.phone-area .phone-text {
+  pointer-events: none;
+}
+
+.header-right a.phone-area:hover {
+  color: #ff6b16 !important;
+  transform: translateY(-2px);
+}
+
+.header-right a.phone-area:hover .phone-icon {
+  background: #ff6b16 !important;
+  color: #ffffff !important;
+  transform: scale(1.05);
+}
+
+.header-right a.phone-area:hover .phone-text small,
+.header-right a.phone-area:hover .phone-text strong {
+  color: #ff6b16 !important;
+}
+
+.header-right a.phone-area:active {
+  transform: scale(0.97);
+}
+
+/* 1100px altında telefon alanı da kaybolmasın */
+@media (max-width: 1100px) and (min-width: 701px) {
+  .header-right a.phone-area {
+    display: flex !important;
+  }
+
+  .header-right {
+    display: flex !important;
+    align-items: center;
+  }
+}
+
+/* Telefonda üst telefon alanı gizli kalır;
+   mobil menü kullanılmaya devam eder. */
+@media (max-width: 700px) {
+  .header-right a.phone-area {
+    display: none !important;
+  }
+}
+/* ÜST TELEFON - TIKLANABİLİR */
+.header-right .phone-area {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  text-decoration: none !important;
+}
+
+.header-right .phone-area:hover {
+  cursor: pointer !important;
+}
+
+.header-right .phone-area * {
+  cursor: pointer !important;
+}
+/* =========================================
+   SİTE TASARIMI İMZASI
+========================================= */
+
+.footer-credit {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.footer-credit span {
+  color: #6b7a90;
+}
+
+.footer-credit strong {
+  color: #10233f;
+  font-weight: 700;
+}
+
+.footer-credit a {
+  color: #ff6b16;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.footer-credit a:hover {
+  color: #10233f;
+  text-decoration: underline;
+}
+
+/* Telefon ve tablet */
+@media (max-width: 900px) {
+  .footer-bottom {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-credit {
+    width: 100%;
+    justify-content: center;
+    order: 3;
+  }
+}
+
+/* Küçük ekran */
+@media (max-width: 600px) {
+  .footer-credit {
+    flex-wrap: wrap;
+    white-space: normal;
+    text-align: center;
+  }
+}
