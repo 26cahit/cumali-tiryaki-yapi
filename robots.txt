@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://26cahit.github.io/cumali-tiryaki-yapi/sitemap.xml
