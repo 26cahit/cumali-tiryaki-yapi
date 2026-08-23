@@ -2419,3 +2419,19 @@ img {
   display: block;
   line-height: 1.5;
 }
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-links a svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  display: block;
+}
+
+.social-links a:hover svg {
+  fill: currentColor;
+}
