@@ -100,7 +100,6 @@
               alt="Cumali Tiryaki Yapı Mühendislik Logo"
             />
           </div>
-
           <div class="brand-name">
             <img src="images/resim.png" alt="Cumali Tiryaki Yapı Mühendislik" />
           </div>
@@ -123,7 +122,6 @@
               <strong>0541 570 28 92</strong>
             </div>
           </a>
-
           <a href="#iletisim" class="quote-btn"> TEKLİF AL <span>→</span> </a>
         </div>
 
@@ -138,16 +136,16 @@
           <span></span>
           <span></span>
         </button>
-
-        <nav id="mobileNav" class="mobile-nav" aria-hidden="true">
-          <a href="#anasayfa">Ana Sayfa</a>
-          <a href="#hizmetler">Hizmetlerimiz</a>
-          <a href="#projeler">Projelerimiz</a>
-          <a href="#kurumsal">Kurumsal</a>
-          <a href="#subeler">Şubelerimiz</a>
-          <a href="#iletisim">İletişim</a>
-        </nav>
       </div>
+
+      <nav id="mobileNav" class="mobile-nav" aria-hidden="true">
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#hizmetler">Hizmetlerimiz</a>
+        <a href="#projeler">Projelerimiz</a>
+        <a href="#kurumsal">Kurumsal</a>
+        <a href="#subeler">Şubelerimiz</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
     </header>
 
     <section id="anasayfa" class="hero">
@@ -559,30 +557,46 @@
       <span>☏</span>
     </a>
     <script>
-      (() => {
-        const button = document.querySelector(".mobile-menu");
+      document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.querySelector(".mobile-menu");
         const menu = document.getElementById("mobileNav");
-        if (!button || !menu) return;
+        if (!btn || !menu) return;
 
-        const closeMenu = () => {
-          button.classList.remove("open");
-          button.setAttribute("aria-expanded", "false");
+        function closeMenu() {
+          btn.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
           menu.classList.remove("open");
           menu.setAttribute("aria-hidden", "true");
-        };
+        }
 
-        button.addEventListener("click", () => {
-          const open = !menu.classList.contains("open");
-          button.classList.toggle("open", open);
-          button.setAttribute("aria-expanded", String(open));
-          menu.classList.toggle("open", open);
-          menu.setAttribute("aria-hidden", String(!open));
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const isOpen = menu.classList.contains("open");
+          if (isOpen) {
+            closeMenu();
+          } else {
+            btn.classList.add("open");
+            btn.setAttribute("aria-expanded", "true");
+            menu.classList.add("open");
+            menu.setAttribute("aria-hidden", "false");
+          }
         });
 
         menu
           .querySelectorAll("a")
-          .forEach((link) => link.addEventListener("click", closeMenu));
-      })();
+          .forEach((a) => a.addEventListener("click", closeMenu));
+
+        document.addEventListener("click", function (e) {
+          if (
+            menu.classList.contains("open") &&
+            !menu.contains(e.target) &&
+            !btn.contains(e.target)
+          ) {
+            closeMenu();
+          }
+        });
+      });
     </script>
   </body>
 </html>
